@@ -14,10 +14,16 @@ $learn[] = 'Build something awesome!';
 array_push($learn, 'Functions', 'Forms', 'Objects');
 array_unshift($learn, 'Functions', 'Forms', 'Objects');
 asort($learn);
+sort($learn);
 
-$count=0;
-while ((list($key, $val) = each($learn)) && (++$count <= 2)) {
-    echo "$key => $val\n";
+for ($i = 0; $i < count($learn); $i++) {
+  echo $learn[$i] . "\n";
 }
+
+// $count=0;
+/*while ((list($key, $val) = each($learn)) && (++$count <= 2)) {
+    echo "$key => $val\n";
+}*/
+
 
 ?>
