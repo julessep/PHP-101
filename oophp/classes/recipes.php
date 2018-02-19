@@ -47,26 +47,13 @@ class Recipe
     );
   }
 
+  public function getIngredients()
+  {
+    return $this->ingredients;
+  }
   public function displayRecipe()
   {
     return $this->title . " by " . $this->source;
   }
 }
 
-// object
-$recipe1 = new Recipe();
-
-// object operator
-$recipe1->source = "Grandma";
-$recipe1->setTitle("my first recipe");
-$recipe1->addIngredient("egg", 3);
-// object
-$recipe2 = new Recipe();
-// object operator
-$recipe2->source = "Jules";
-$recipe2->setTitle("My second recipe");
-
-echo $recipe1->getTitle();
-echo $recipe1->displayRecipe();
-echo $recipe2->displayRecipe();
-// var_dump($recipe1);
