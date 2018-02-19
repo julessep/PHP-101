@@ -1,6 +1,7 @@
 <?php
 include "classes/recipes.php";
 include "classes/render.php";
+include "inc/recipes.php";
 // object
 $recipe1 = new Recipe("my first recipe");
 $recipe1->setSource = "Grandma";
