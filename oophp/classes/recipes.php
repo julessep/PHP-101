@@ -4,11 +4,11 @@ class Recipe
 {
   // properties
   private $title;
-  public $ingredients = array();
-  public $instructions = array();
-  public $yeild;
-  public $tag = array();
-  public $source = 'Jules Sepulveda';
+  private $ingredients = array();
+  private $instructions = array();
+  private $yeild;
+  private $tag = array();
+  private $source = 'Jules Sepulveda';
 
   private $measurements = array(
     "tsp",
@@ -21,15 +21,56 @@ class Recipe
     "quart",
     "gallon"
   );
+
+  public function __construct($title = null)
+  {
+    $this->setTitle($title);
+  }
   // setter
   public function setTitle($title)
   {
-    $this->title = ucwords($title);
+    if (empty($title)) {
+      $this->title = null;
+    } else {
+      $this->title = ucwords($title);
+    }
   }
   // getter
   public function getTitle()
   {
     return $this->title;
+  }
+  public function addInstruction($string)
+  {
+    return $this->instructions[] = $string;
+  }
+  public function addTag($tag)
+  {
+    return $this->tags[] = strtolower($tag);
+  }
+  public function getTags()
+  {
+    return $this->tags;
+  }
+  public function setYield($yield)
+  {
+    $this->yield = $yield;
+  }
+  public function getYield()
+  {
+    return $this->yield;
+  }
+  public function setSource($source)
+  {
+    $this->source = ucwords($source);
+  }
+  public function getSource()
+  {
+    return $this->source;
+  }
+  public function getInstructions()
+  {
+    return $this->instructions;
   }
 
   public function addIngredient($item, $amount = null, $measure = null)
