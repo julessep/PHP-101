@@ -61,12 +61,29 @@
 // $num = $func(4,7);
 // echo $num;
 // ******* STRING FUNCTIONS ********
-$phrase = "We only hit what we aim for";
-$len = strlen($phrase);
-// echo $len;
+// $phrase = "We only hit what we aim for";
+// $len = strlen($phrase);
+// // echo $len;
 
 
-// strpos
-$start = strpos($phrase, 'hit');
-// substr
-echo substr($phrase, $start);
+// // strpos
+// $start = strpos($phrase, 'hit');
+// // substr
+// echo substr($phrase, $start);
+
+// ******* ARRAY FUNCTIONS ********
+$names = array(
+  'Mike' => 'Frog',
+  'Chris' => 'Dog',
+  'Mini' => 'Kitty',
+);
+
+foreach (array_keys($names) as $name){
+  echo "Hello, $name</br>";
+}
+
+function print_info($value, $key){
+  echo "$key is a $value.</br>";
+}
+
+array_walk($names, 'print_info');
