@@ -2,18 +2,14 @@
 include "classes/recipes.php";
 include "classes/render.php";
 // object
-$recipe1 = new Recipe();
-
-// object operator
+$recipe1 = new Recipe("my first recipe");
 $recipe1->setSource = "Grandma";
-$recipe1->setTitle("my first recipe");
 $recipe1->addIngredient("eggs", 3);
 $recipe1->addIngredient("flour", 2, "cup");
-// object
-$recipe2 = new Recipe();
+
+$recipe2 = new Recipe("My second recipe");
 // object operator
 // $recipe2->setSource = "Jules";
-$recipe2->setTitle("My second recipe");
 
 // echo $recipe1->getTitle();
 // foreach ($recipe1->getIngredients() as $ing) {
@@ -33,6 +29,8 @@ $recipe1->setYield("6 servings");
 // echo $recipe1->getYield();
 // echo $recipe1->getSource();
 
-echo Render::displayRecipe($recipe1);
+// echo Render::displayRecipe($recipe1);
+echo $recipe;
+echo new Render();
 
 // var_dump($recipe1);
